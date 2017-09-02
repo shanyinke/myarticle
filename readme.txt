@@ -1,8 +1,8 @@
 ########## MyArticle 文章管理系统 0.03 beta1 ###################### 
 # 运行环境: PHP+mysql 
-# 版权所有: skyee
-# E-mail　: skyee_zood@citiz.net
-# 程序演示http://our9713.techofficer.net/article/index.php
+# 版权所有: myarticle
+# E-mail　: admin@myarticle.pw
+# 程序演示http://www.myartile.pw
 # 【版权声明】 
 # 
 # 本软体为自由软件(freeware)
