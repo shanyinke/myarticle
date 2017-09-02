@@ -1,4 +1,4 @@
-########## MyArticle 文章管理系统 0.03 beta1 ###################### 
+########## MyArticle 文章管理系统 1.0 beta1 ###################### 
 # 运行环境: PHP+mysql 
 # 版权所有: myarticle
 # E-mail　: admin@myarticle.pw
