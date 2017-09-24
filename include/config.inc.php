@@ -9,8 +9,8 @@ define('tablepre','my_');
 define('language','gb2312');
 
 define('hometitle','MyArticle');
-define('home_url','http://our9713.techofficer.net/article/');
-define('site_url','http://our9713.techofficer.net/article/');
+define('home_url','http://myarticle.pw');
+define('site_url','http://myarticle.pw');
 define('UPLOAD_PATH','upload');
 
 define('numofshowrate','3');
