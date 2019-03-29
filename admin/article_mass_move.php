@@ -24,29 +24,29 @@ $jumpmenu=get_category_dropdown(0);
 if(empty($keyword)) {
 	
 	$content.='<tr bgcolor="#FFFFFF"> 
-            <td>è¯·è¾“å…¥å…³é”®å­—:</td>
+            <td>ÇëÊäÈë¹Ø¼ü×Ö:</td>
             <td> 
               <input type="text" name="keyword">
               <input type="hidden" name="action" value="result">
             </td>
           </tr>
           <tr bgcolor="#FFFFFF"> 
-            <td>è¯·é€‰æ‹©æœç´¢çš„èŒƒå›´:</td>
+            <td>ÇëÑ¡ÔñËÑË÷µÄ·¶Î§:</td>
             <td> 
-              åœ¨<INPUT type=checkbox name=searchTitle checked> æ ‡é¢˜
-	<INPUT type=checkbox name=searchInContent> æ–‡ç« å†…å®¹  ä¸­æœç´¢ </td>
+              ÔÚ<INPUT type=checkbox name=searchTitle checked> ±êÌâ
+	<INPUT type=checkbox name=searchInContent> ÎÄÕÂÄÚÈÝ  ÖÐËÑË÷ </td>
           </tr>
           <tr bgcolor="#FFFFFF"> 
-            <td>è¯·é€‰æ‹©åˆ†ç±»:</font></td>
+            <td>ÇëÑ¡Ôñ·ÖÀà:</font></td>
             <td>'.$jumpmenu.'</td>
           </tr><tr bgcolor="#FFFFFF">
-	<td>è¯·é€‰æ‹©æœç´¢ç»“æžœæŽ’åºæ–¹å¼</td>
+	<td>ÇëÑ¡ÔñËÑË÷½á¹ûÅÅÐò·½Ê½</td>
 	<TD>
           <SELECT  name=orderby>
-            <OPTION value=posttime>æŒ‰ç…§æ–‡ç« å‘è¡¨æ—¶é—´æŽ’åº</OPTION>
-            <OPTION value=clicktimes>æŒ‰ç…§æ–‡ç« ç‚¹å‡»æ•°ç›®æŽ’åº</OPTION>
-            <OPTION value=rating>æŒ‰ç…§æ–‡ç« çš„å¾—åˆ†æŽ’åº</OPTION>
-            <OPTION value=poster>æŒ‰ç…§ä¸»é¢˜ä½œè€…ç”¨æˆ·åæŽ’åº</OPTION>
+            <OPTION value=posttime>°´ÕÕÎÄÕÂ·¢±íÊ±¼äÅÅÐò</OPTION>
+            <OPTION value=clicktimes>°´ÕÕÎÄÕÂµã»÷ÊýÄ¿ÅÅÐò</OPTION>
+            <OPTION value=rating>°´ÕÕÎÄÕÂµÄµÃ·ÖÅÅÐò</OPTION>
+            <OPTION value=poster>°´ÕÕÖ÷Ìâ×÷ÕßÓÃ»§ÃûÅÅÐò</OPTION>
           </SELECT>
           </TD>
 	</tr>';
@@ -131,7 +131,7 @@ if($articleCount > $articleperpage) {
 
 $content .= '</td></tr><input type=hidden name=action value=move>';
 $content .=' <tr bgcolor="#FFFFFF"> 
-            <td>è¯·é€‰æ‹©ç›®çš„åˆ†ç±»:</font></td>
+            <td>ÇëÑ¡ÔñÄ¿µÄ·ÖÀà:</font></td>
             <td colspan=2>'.$jumpmenu.'</td>
           </tr>';
 

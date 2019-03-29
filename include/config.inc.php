@@ -18,7 +18,7 @@ define('articlesPP','5');
 define('timeformat','Y-m-d G:i:s');
 define('gzip_level','3');
 define('fix_unicode','1');
-define('default_style','1');
+define('default_style','');
 define('using_cache','0');
 
 define('cookie_path','/');

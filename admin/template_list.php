@@ -91,7 +91,7 @@ foreach ( $templateList as $filename => $filenameTp ){
 
 
 
-$content .= "</td><tr bgcolor=#ffffff><td><p><span class=\"gc\">è¿™ä¸ªé¢œè‰²</span> çš„æ¨¡æ¿æ˜¯åˆå§‹çš„æ¨¡æ¿ï¼Œå¯ä»¥è¢«ç”¨æ¥æ·»åŠ è‡ªå®šä¹‰æ¨¡æ¿.<br>\n <span class=\"cc\">è¿™ä¸ªé¢œè‰²</span> çš„æ¨¡æ¿æ˜¯è‡ªå®šä¹‰çš„æ¨¡æ¿æˆ–è€…ä¿®æ”¹è¿‡çš„æ¨¡æ¿ï¼Œå¯ä»¥è¢«è½¬æ¢ä¸ºåˆå§‹æ¨¡æ¿.</p><ul>";
+$content .= "</td><tr bgcolor=#ffffff><td><p><span class=\"gc\">Õâ¸öÑÕÉ«</span> µÄÄ£°åÊÇ³õÊ¼µÄÄ£°å£¬¿ÉÒÔ±»ÓÃÀ´Ìí¼Ó×Ô¶¨ÒåÄ£°å.<br>\n <span class=\"cc\">Õâ¸öÑÕÉ«</span> µÄÄ£°åÊÇ×Ô¶¨ÒåµÄÄ£°å»òÕßĞŞ¸Ä¹ıµÄÄ£°å£¬¿ÉÒÔ±»×ª»»Îª³õÊ¼Ä£°å.</p><ul>";
 //$debug=1;
 if ($debug) {
 		
@@ -104,8 +104,8 @@ if ($debug) {
 		while ($template=$DB_site->fetch_array($templates)) {
 
 			$content .= "<li>$template[title]".
-				show_text_link("ç¼–è¾‘","template_edit.php?templateId=$template[templateid]&templatesetid=-1&group=$group").
-				show_text_link("åˆ é™¤","template_edit.php?action=delete&templateId=$template[templateid]&templatesetid=-1&group=$group").
+				show_text_link("±à¼­","template_edit.php?templateId=$template[templateid]&templatesetid=-1&group=$group").
+				show_text_link("É¾³ı","template_edit.php?action=delete&templateId=$template[templateid]&templatesetid=-1&group=$group").
 				"</li>\n";
 
 		}
@@ -117,15 +117,15 @@ while ($templateset=$DB_site->fetch_array($templatesets)) {
 	$donecustom=0;
 	$donedefault=0;
 	$content .= "<li><b>$templateset[title]</b>".
-	show_text_link("ç¼–è¾‘","style_man_edit.php?templatesetid=$templateset[templatesetid]&group=$group").
-	show_text_link("åˆ é™¤","style_man_edit.php?action=removeset&templatesetid=$templateset[templatesetid]").
-	show_text_link("æ·»åŠ æ¨¡æ¿","template_add.php?templatesetid=$templateset[templatesetid]&group=$group").
-	show_text_link("æ˜¾ç¤ºå…¨éƒ¨","template_list.php?action=modify&expandset=$templateset[templatesetid]&group=all").
-	show_text_link("æŒ‰ç»„æ˜¾ç¤º","template_list.php?action=modify&expandset=$templateset[templatesetid]").
+	show_text_link("±à¼­","style_man_edit.php?templatesetid=$templateset[templatesetid]&group=$group").
+	show_text_link("É¾³ı","style_man_edit.php?action=removeset&templatesetid=$templateset[templatesetid]").
+	show_text_link("Ìí¼ÓÄ£°å","template_add.php?templatesetid=$templateset[templatesetid]&group=$group").
+	show_text_link("ÏÔÊ¾È«²¿","template_list.php?action=modify&expandset=$templateset[templatesetid]&group=all").
+	show_text_link("°´×éÏÔÊ¾","template_list.php?action=modify&expandset=$templateset[templatesetid]").
       "<ul>\n";
 	if (!$expandset or $expandset!=$templateset['templatesetid']) {
 		$content .= "<li><b>".
-			show_text_link("æ‰©å±•åˆ—è¡¨","template_list.php?expandset=$templateset[templatesetid]")."</b></li>\n";
+			show_text_link("À©Õ¹ÁĞ±í","template_list.php?expandset=$templateset[templatesetid]")."</b></li>\n";
       $content .= "</ul></li>\n";
       continue;
     }
@@ -134,12 +134,12 @@ while ($templateset=$DB_site->fetch_array($templatesets)) {
     while ($template=$DB_site->fetch_array($templates)) {
 		if (!$donecustom) {
 			$donecustom=1;
-			$content .= "<b>è‡ªå®šä¹‰æ¨¡æ¿</b>";
+			$content .= "<b>×Ô¶¨ÒåÄ£°å</b>";
 		}
 
 		$content .= "<li><span class='cc'>$template[title]</span>".
-		show_text_link("ç¼–è¾‘","template_edit.php?templateId=$template[templateid]&templatesetid=$templateset[templatesetid]&group=$group").
-		show_text_link("åˆ é™¤","template_edit.php?action=delete&templateId=$template[templateid]&templatesetid=$templateset[templatesetid]&group=$group").
+		show_text_link("±à¼­","template_edit.php?templateId=$template[templateid]&templatesetid=$templateset[templatesetid]&group=$group").
+		show_text_link("É¾³ı","template_edit.php?action=delete&templateId=$template[templateid]&templatesetid=$templateset[templatesetid]&group=$group").
 				"</li>\n";
 
     }
@@ -157,26 +157,26 @@ while ($templateset=$DB_site->fetch_array($templatesets)) {
    
     if (!$donedefault and $donecustom) {
 		$donedefault=1;
-        $content .= "<br><b>é»˜è®¤æ¨¡æ¿</b>";
+        $content .= "<br><b>Ä¬ÈÏÄ£°å</b>";
     }
 	
     //start display sorted Templates
     reset($templateList);
 	foreach ( $templateList as $filename => $filenameTp ) {
 		$groupname=$filename;
-		$content .= "<li><a name=\"".urlencode($filename)."\"><b></a>$filename <a href=\"template_list.php?expandset=$templateset[templatesetid]&group=".urlencode($filename)."#".urlencode($filename)."\">[æ‰©å±•åˆ—è¡¨]</a></b>\n<ul>";
+		$content .= "<li><a name=\"".urlencode($filename)."\"><b></a>$filename <a href=\"template_list.php?expandset=$templateset[templatesetid]&group=".urlencode($filename)."#".urlencode($filename)."\">[À©Õ¹ÁĞ±í]</a></b>\n<ul>";
 		if ($group==$groupname or $group=="all"){
 			foreach ($filenameTp as $key => $tps){
 				$templateId=$temp_cache[$tps]['templateid'];
 				if ($temp_cache[$tps][found]){
 					$content .= "<li><span class='cc'>$tps</span>".
-          			show_text_link("ç¼–è¾‘","template_edit.php?templateId=$templateId				&templatesetid=$templateset[templatesetid]&group=$group").
-          			show_text_link("è½¬æ¢ä¸ºé»˜è®¤","template_edit.php?templateId=$templateId&templatesetid=$templateset[templatesetid]&action=delete&group=$group").
-					show_text_link("æŸ¥çœ‹åˆå§‹æ¨¡æ¿","template_list.php?action=view&title=".urlencode($tps),1).
+          			show_text_link("±à¼­","template_edit.php?templateId=$templateId				&templatesetid=$templateset[templatesetid]&group=$group").
+          			show_text_link("×ª»»ÎªÄ¬ÈÏ","template_edit.php?templateId=$templateId&templatesetid=$templateset[templatesetid]&action=delete&group=$group").
+					show_text_link("²é¿´³õÊ¼Ä£°å","template_list.php?action=view&title=".urlencode($tps),1).
 					"</li>\n";
 				}else{
 					$content .= "<li><span class='gc'>$tps</span>".
-					show_text_link("æ”¹å˜åˆå§‹","template_add.php?templateName=$tps&templatesetid=$templateset[templatesetid]&group=$group").
+					show_text_link("¸Ä±ä³õÊ¼","template_add.php?templateName=$tps&templatesetid=$templateset[templatesetid]&group=$group").
 					"</li>";
 				}
 			}
@@ -191,13 +191,13 @@ while ($templateset=$DB_site->fetch_array($templatesets)) {
 			if ($temp_cache[$tps][found]){
 					$templateId=$temp_cache[$tps]['templateid'];
 					$content .= "<li><span class='cc'>$tps</span>".
-          			show_text_link("ç¼–è¾‘","template_edit.php?templateId=$templateId&templatesetid=$templateset[templatesetid]&group=$group").
-          			show_text_link("è½¬æ¢ä¸ºé»˜è®¤","template_edit.php?templateId=$templateId&templatesetid=$templateset[templatesetid]&action=delete&group=$group").
-					show_text_link("æŸ¥çœ‹åˆå§‹æ¨¡æ¿","template_list.php?action=view&title=".urlencode($tps),1).
+          			show_text_link("±à¼­","template_edit.php?templateId=$templateId&templatesetid=$templateset[templatesetid]&group=$group").
+          			show_text_link("×ª»»ÎªÄ¬ÈÏ","template_edit.php?templateId=$templateId&templatesetid=$templateset[templatesetid]&action=delete&group=$group").
+					show_text_link("²é¿´³õÊ¼Ä£°å","template_list.php?action=view&title=".urlencode($tps),1).
 					"</li>\n";
 			}else{
 					$content .= "<li><span class='gc'>$tps</span>".
-					show_text_link("æ”¹å˜åˆå§‹","template_add.php?templateName=$tps&templatesetid=$templateset[templatesetid]&group=$group").
+					show_text_link("¸Ä±ä³õÊ¼","template_add.php?templateName=$tps&templatesetid=$templateset[templatesetid]&group=$group").
 					"</li>";
 			}
 			
@@ -205,7 +205,7 @@ while ($templateset=$DB_site->fetch_array($templatesets)) {
 	$content .=  "</ul></li>\n";
 	$content .=  "</ul></li>\n";
 }//end display all Templatesets while
-$content .= "</ul><p>ä»¥ä¸Šæ˜¯æ‰€æœ‰è®°å½•</p>";	  
+$content .= "</ul><p>ÒÔÉÏÊÇËùÓĞ¼ÇÂ¼</p>";	  
 
 $content .= '</ul></li></ul></td></tr>';
 
