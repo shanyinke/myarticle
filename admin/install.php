@@ -39,11 +39,11 @@ $admin_password  = (isset($_POST['admin_password'])) ? trim($_POST['admin_passwo
 $admin_password2 = (isset($_POST['admin_password2'])) ? trim($_POST['admin_password2']) : "";
 
 
-echo $db_servertype ;
-echo $db_host ;
-echo $db_user ;
-echo $db_password ;
-echo $db_name ;
+echo $db_servertype."<br>" ;
+echo $db_host."<br>"  ;
+echo $db_user."<br>"  ;
+echo $db_password."<br>"  ;
+echo $db_name."<br>"  ;
 
 
 
