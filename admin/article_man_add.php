@@ -14,9 +14,10 @@ $page=$page? $page : 1;
 
 
 $content = '<HTML><head><META content="text/html; charset='.language.'" http-equiv=Content-Type><Title>Admin Panel Component</title><link rel=stylesheet href=cpstyle.css>
+<script src="//cdn.ckeditor.com/4.11.3/standard/ckeditor.js"></script>
 	</head><body bgcolor=FFFFFF  text="#000000" leftmargin="10" topmargin="10" marginwidth="10" marginheight="10" link="#000000" vlink="#000000" alink="#000000" onLoad="Init()">';
 
-include('./js.php');
+///include('./js.php');
 $content.= '<table width=98% cellspacing=0 cellpadding=0 border=0>
 					<tr>
 						<td><p>&nbsp;</p></td>
@@ -56,17 +57,22 @@ if ($_POST['submit'] || $_POST['nextpage']){
 $content.='<tr bgcolor="#ffffff"><td> Article title: </td><td><input type=text name=articleTitle></td></tr>';
 
 $content.='<tr bgcolor="#ffffff"><td> Article author: </td><td><input type=text name=articleAuthor></td></tr>';
-$content.="<tr bgcolor=#ffffff><td> description:</td><td><textarea name='articleDescription' rows='5' cols='50'></textarea></td></tr>";
+$content.="<tr bgcolor=#ffffff><td> description:</td><td>
+<textarea name='articleDescription' rows='5' cols='50'></textarea></td></tr>";
 $dropdown=get_category_dropdown($cat_parent_id);
 $content.="<tr bgcolor='#ffffff'><td> category under:</td><td>$dropdown</td></tr>";
 
 $content.='<tr bgcolor="#ffffff"><td>subtitle: </td><td><input type=text name=articleSubtitle></td></tr>';
-$content.='<INPUT type=hidden name=articleContent>';
+
 $content.='<input type="hidden" name="__data">';
 //$content.='<input type="hidden" name="page" value='.$page.'>';
 //$content.='<input type="hidden" name="articleid" value='.$articleid.'>';
 
-include('./bar.php');
+//include('./bar.php');
+$content.='<tr bgcolor="#ffffff"><td>content: </td><td> <textarea name="articleContent"></textarea>
+                <script>
+                        CKEDITOR.replace( "articleContent" );
+                </script></td></tr>';
 print $content.'<tr bgcolor=EEEEEE><td colspan=20><input type=submit name="submit">&nbsp;&nbsp;<INPUT accessKey=r type=reset value=reset name="reset"> <INPUT accessKey=n type=submit value=nextpage name="nextpage"></td></tr></table></table><br><br></Form></Body></Html>';
 
 

@@ -48,20 +48,17 @@ echo $db_name."<br>"  ;
 
 
 $con = @mysql_connect($db_host, $db_user, $db_password);
-if ($con && @mysql_select_db($db_name, $con)) {
+mysql_query("SET NAMES 'GBK'");
+ if ($con){
+
+if (@mysql_select_db($db_name, $con)) {
 	echo "<p>Congratulations.</p>";
 	echo "<p>Your database configuration is correct.</p>";
 } else {
 	echo "<p>Unable to connect to database.</p>";
 	echo "<p><a href='javascript:history.back()'>Click here back to resetup the database configuration.</a></p>";
 	//////////////////////////////
-	 if ($con) {
-       echo "<p>数据库服务器连接成功</p>";
-       if (@mysql_select_db($db_name)) {
-           echo "<p><a href=\"./install.php?step=".($step+1)."&delete_existing=1\">继续下一步(删除已存在的表)</a></p>";
-           echo "<p><a href=\"./install.php?step=".($step+1)."&delete_existing=0\">继续下一步(不删除已存在的表)</a></p>";
-       } else {
-           echo "<p>正尝试创建数据库 $dbname</p>";
+	echo "<p>We're creating  the database ... Finished.</p>";
 			
 
 
@@ -71,25 +68,30 @@ $sql = 'CREATE DATABASE '.$db_name.'  DEFAULT CHARACTER SET gbk COLLATE gbk_chin
 	//@mysql_create_db($dbname)		
 
            if (@mysql_query($sql, $con)) {
-               echo "<p>数据库创建成功</p>";
+               echo "<p>Database creation success </p>";
              
            } else {
                echo "<p>数据库创建失败</p>";
                echo "<p><a href='javascript:history.back()'>返回上一步</a></p>";
            }
-       }
+	
+	
+	
+	
+}}
+else{
+	
+	  
+	  echo "<p>数据库服务器连接失败</p>";
+	  echo "<p>Unable to connect to database server.</p>";
+	  echo "<p><a href='javascript:history.back()'>Click here back to resetup the database configuration.</a></p>";
+	 
+	echo $footer;
+	exit();
+	}
 
-   } else {
-       echo "<p>数据库服务器连接失败</p>";
-   }
-		
-	///////////////////////////////////////////
-	
-	
-	
-	//echo $footer;
-	//exit();
-}
+
+
 if (!$admin_user || !$admin_password || $admin_password!=$admin_password2) {
 	echo "error:the admin account's information is not correct";
 
@@ -115,7 +117,7 @@ else
 	saveChanges();
 	echo "FINISHED.<br>";
 	echo "The database configuration has been saved.<p>";
-	echo "<p> We're creating tables and insert template<p>.<br>";
+	echo "<p> We're creating tables and insert template<p>.<br>".date("Y-m-d H:i:s");
 	require '../include/db_mysql.inc.php';
 	
 	$site_db = new db_mysql($db_name, $db_host, $db_user, $db_password);

@@ -19,7 +19,7 @@ $content.='<table width=98% cellspacing=0 cellpadding=0 border=0>
 
 
 $content.='<br><br>
-  Myarticle  Version: 2002.7<br><br>
+  Myarticle  Version: 2019.3<br><br>
 
   Please choose options from left menu column.<br><br>
   <font size=2>stats<font><br><br>';

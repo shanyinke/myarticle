@@ -39,7 +39,7 @@ if ($magic_quotes_gpc == 0) {
 require("./include/db_mysql.inc.php");
 
 $DB_site= new db_mysql(db_name, db_host, db_user, db_pass);
-
+mysql_query("SET NAMES 'GBK'");
 
 //$DB_site->database=db_name;
 //$DB_site->server=db_host;

@@ -512,6 +512,7 @@ if (getCache){
 	$sql = "SELECT cateid, title, description, parentid, displayorder  
           FROM $table_cate 
           ORDER BY displayorder, cateid ASC";
+		// echo $sql;
 	$result = $DB_site->query($sql);
 	while ($row = $DB_site->fetch_array($result)) {
 		$cat_cache[$row['cateid']] = $row;
