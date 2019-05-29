@@ -17,9 +17,15 @@
 
 require('article_global.inc.php');
 
-if (!isset($cid)){
+
+
+
+if (!isset($_GET[cid])){
 	showerror('error_cateid');
+}else{
+	$cid=$_GET[cid];
 }
+
 
 
 $t->preload('cate_display');
@@ -63,6 +69,7 @@ $articles=$DB_site->query("SELECT $table_article.*,$table_cate.cateid,$table_cat
 LEFT JOIN $table_cate using (cateid)
 WHERE $table_article.cateid=$cid
 ORDER BY posttime DESC LIMIT $beginRow,$articlesPP");
+
 
 while ($article=$DB_site->fetch_array($articles)){
 	//$content=parseString($article[content]);

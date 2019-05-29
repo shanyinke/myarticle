@@ -18,19 +18,33 @@ if (!isset($usergoupid)){
 	showerror();
 }
 */
+
+if(!isset($_GET['action'])){
+
+}else{
+    $action=$_GET['action'];
+}
+if(!isset($_GET['usergroupid'])){
+
+}else{
+    $usergroupid=$_GET['usergroupid'];
+}
+
 if ($_POST['submit']) {
 	if ($_POST['groupTitle']) {
 		$permissions=formTosql($_POST['permissions']);
 		$DB_site->query("UPDATE $table_usergroup
 		SET
-		usergroupid ='',
+		
 		title      ='".slashesencode($_POST['groupTitle'])."',
 		canadd     = '$permissions[canadd]',
 		canedit    = '$permissions[canedit]',
 		cancomment = '$permissions[cancomment]',
 		canpublish = '$permissions[canpublish]',
-		canadmin   = '$permissions[canadmin]',' ");
-		showSuccess('You have added a new user successfully', 'cate_man_user.php');
+		canadmin   = '$permissions[canadmin]'
+		where usergroupid ='$usergroupid'
+		 ");
+		showSuccess('You have edit the group successfully', 'user_mangroup.php');
 	}else{
 
 		$content.='<tr bgcolor=FFFFFF><td colspan=2><font color=red>Please fill up the content</font></td></tr>';

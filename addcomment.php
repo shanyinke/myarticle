@@ -22,7 +22,12 @@ require('article_global.inc.php');
 
 	if (!isset($_POST['articleid'])){
 		showerror('error_articleid');
+	}else{
+		$articleid=$_GET['articleid'];
 	}
+	
+	
+
 
 	if ($_POST['subject'] && $_POST['content']){
 		$articleid=$_POST[articleid];

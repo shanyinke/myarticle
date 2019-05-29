@@ -48,7 +48,7 @@ echo $db_name."<br>"  ;
 
 
 $con = @mysql_connect($db_host, $db_user, $db_password);
-mysql_query("SET NAMES 'GBK'");
+mysql_query("SET NAMES 'utf8'");
  if ($con){
 
 if (@mysql_select_db($db_name, $con)) {
@@ -62,7 +62,7 @@ if (@mysql_select_db($db_name, $con)) {
 			
 
 
-$sql = 'CREATE DATABASE '.$db_name.'  DEFAULT CHARACTER SET gbk COLLATE gbk_chinese_ci';
+$sql = 'CREATE DATABASE '.$db_name.'  DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci';
 //create database yourdb DEFAULT CHARACTER SET gbk COLLATE gbk_chinese_ci;
 
 	//@mysql_create_db($dbname)		

@@ -19,9 +19,14 @@ require('article_global.inc.php');
 
 
 
-if (!isset($aid)){
+
+if (!isset($_GET[aid])){
 	showerror('error_articleid');
+}else{
+	$aid=$_GET[aid];
 }
+
+
 /**
 if (!isset($page)){
 	$page=1;

@@ -25,11 +25,11 @@ if ($_POST['submit']) {
 		canadd     = '$permissions[canadd]',
 		canedit    = '$permissions[canedit]',
 		cancomment = '$permissions[cancomment]',
-		canpublish = '$permissions[canpublis]',
-		canadmin   = '$permissions[canadmin]',' ");
+		canpublish = '$permissions[canpublish]',
+		canadmin   = '$permissions[canadmin]'");
 
 		
-		showSuccess('You have added a new user successfully', 'cate_man_user.php');
+		showSuccess('You have added a new group successfully', 'user_mangroup.php');
 	}else{
 
 		$content.='<tr bgcolor=FFFFFF><td colspan=2><font color=red>Please fill up the content</font></td></tr>';

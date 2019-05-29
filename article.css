@@ -1,0 +1,183 @@
+<STYLE TYPE="text/css">
+<!--
+a:link,a:active,a:visited 
+{
+                text-decoration: underline;
+                color : #000000;
+}
+a:hover 
+{
+                text-decoration: none;
+                color : #999999;
+}
+
+.articletitle 
+{
+        font-weight: bold;
+         font-size: 18px;
+         color: #335588;
+         line-height: 26px;
+         font-family: trebuchet ms, arial, verdana, helvetica, sans-serif;
+         text-decoration: none;
+}
+
+input,textarea, {
+color : #000000;
+font-family : Verdana, Arial, Helvetica, sans-serif,宋体;
+font-size : 12px;
+font-weight : normal;
+
+}
+
+
+.bginput 
+{
+         background-color:#ffffff;
+         border: #000000;
+         border-style: solid;
+         border-top-width: 1px;
+         border-right-width: 1px;
+         border-bottom-width: 1px;
+         border-left-width: 1px;
+        font-family : verdana, arial, helvetica, sans-serif;
+        font-size : 11px;
+         ;
+}
+select 
+{
+        color : #000000;
+        font-family : 宋体;
+        font-size : 12px;
+        font-weight : normal;
+        background-color : #ffffff;
+}
+.firstalt 
+{
+                background-color: #eeeeee;
+}
+.secondalt 
+{
+                background-color: #ffffff;
+}
+.bigfont 
+{
+                    font-family: verdana, arial, helvetica, sans-serif,宋体;
+                    font-size: 45px;
+}
+.normalfont 
+{
+                    font-family: verdana, arial, helvetica, sans-serif,宋体;
+                    font-size: 12px;
+}
+.middlefont 
+{
+                    font-family: verdana, arial, helvetica, sans-serif,宋体;
+                    font-size: 11px;
+}
+.smallfont 
+{
+                    font-family: verdana, arial, helvetica, sans-serif,宋体;
+                    font-size: 9px;
+}
+.smallbold
+{
+        color: #000000;
+         font-weight: bold;
+}
+.articletitle 
+{
+                    font-family: verdana, arial, helvetica, sans-serif,宋体;
+                    font-size: 14pt;
+                    font-weight: bold;
+}
+
+.subhead
+{
+                    font-weight: bold;
+                    font-family: verdana, arial, helvetica, sans-serif,宋体;
+                    font-size: 13;
+                            color: #006699
+}
+
+.content
+{
+                    font-family: verdana, arial, helvetica, sans-serif,宋体;
+                    font-size: 12;                            
+}
+.titlefont 
+{
+                    font-family: verdana, arial, helvetica, sans-serif,宋体;
+                    font-size: 12;
+                    color: #ffffff;
+}
+.bodyline 
+{
+         background-color:#ffffff;
+                     border: #aebdc4;
+         border-style: solid;
+                     border-top-width: 1px;
+                     border-right-width: 1px;
+                     border-bottom-width: 1px;
+                     border-left-width: 1px ;
+}
+.tableoutline 
+{
+                   background-color: #ffffff;
+                   border: 2px #006699 solid;
+}
+.tdhead 
+{
+                    background-color: #006699;
+                    background-image: url(../images/cellpic3.gif);
+                    font-weight: bold;
+                    border: #ffffff;
+}
+.tdcat 
+{
+                    background-image: url(../images/cellpic1.gif);
+}
+.cattitle 
+{
+                   font-weight: bold;
+                   font-size: 12px ;
+                   letter-spacing: 1px;
+                   color : #006699;
+}
+
+.root_td
+{
+BACKGROUND-COLOR: #004184;
+color: #FFFFFF;
+font-family: Verdana;
+font-size: 12px;
+font-weight: bold;
+height: 22;
+padding-left: 5;
+}
+
+.child_td
+{
+BACKGROUND-COLOR: #F5F5F5;
+color: #000000;
+font-family: Verdana;
+font-size: 11px;
+height: 18;
+padding-left: 10;
+padding-right: 10;
+padding-bottom: 3;
+}
+
+#cattitle A:link {COLOR: #ffffff; TEXT-DECORATION: none}
+#cattitle A:visited {COLOR: #ffffff; TEXT-DECORATION: none}
+#cattitle A:active {COLOR: #ffffff; TEXT-DECORATION: none}
+#cattitle A:hover {COLOR: #ffffff; TEXT-DECORATION: none}
+-->
+
+.reginput
+{
+	border-left: 1px solid #FFFFFF; 
+	border-right: 1px solid #FFFFFF; 
+	border-top: 1px solid #FFFFFF; 
+	padding: 0
+}
+</STYLE>

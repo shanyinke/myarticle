@@ -23,7 +23,7 @@ if ($_POST['submit']) {
 		$user_table_fields[user_name] ='".slashesencode($_POST['userName'])."',
 		$user_table_fields[user_password] ='".slashesencode($_POST['passWord'])."',
 		$user_table_fields[user_email]  ='".slashesencode($_POST['email'])."',
-		$user_table_fields[user_groupid] = '$_POST[group_id]',
+		$user_table_fields[user_groupid] = '".$_POST[group_id]."',
 		$user_table_fields[user_joindate] = '".time()."'
 		");
 

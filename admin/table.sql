@@ -1,4 +1,4 @@
-/*
+	/*
 Navicat MySQL Data Transfer
 
 Source Server         : localhost
@@ -31,9 +31,10 @@ CREATE TABLE `my_article` (
   `votes` smallint(6) NOT NULL DEFAULT '0',
   `ipaddress` varchar(16) NOT NULL DEFAULT '',
   `commentnum` smallint(8) NOT NULL DEFAULT '0',
+  `published` enum('y','n') NOT NULL DEFAULT 'n',
   PRIMARY KEY (`articleid`),
   KEY `postid` (`articleid`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 #- ----------------------------
 #- Records of my_article
@@ -51,7 +52,7 @@ CREATE TABLE `my_cate` (
   `parentid` int(3) unsigned NOT NULL DEFAULT '0',
   `articles` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`cateid`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 #- ----------------------------
 #- Records of my_cate
@@ -70,7 +71,7 @@ CREATE TABLE `my_comment` (
   `content` text NOT NULL,
   `email` varchar(20) NOT NULL DEFAULT '',
   PRIMARY KEY (`commentid`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 #- ----------------------------
 #- Records of my_comment
@@ -88,7 +89,7 @@ CREATE TABLE `my_page` (
   `content` text NOT NULL,
   `dateline` smallint(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`pageid`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 #- ----------------------------
 #- Records of my_page
@@ -107,7 +108,7 @@ CREATE TABLE `my_permissions` (
   `cancomment` enum('y','n') NOT NULL DEFAULT 'n',
   `canpublish` enum('y','n') NOT NULL DEFAULT 'n',
   PRIMARY KEY (`permissionid`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 #- ----------------------------
 #- Records of my_permissions
@@ -123,7 +124,7 @@ CREATE TABLE `my_template` (
   `template` text,
   `templatesetid` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`templateid`,`title`)
-) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=gbk;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 
 #- ----------------------------
@@ -134,7 +135,7 @@ CREATE TABLE `my_templateset` (
   `templatesetid` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `title` char(250) NOT NULL DEFAULT '',
   PRIMARY KEY (`templatesetid`)
-) ENGINE=MyISAM DEFAULT CHARSET=gbk;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 #- ----------------------------
 #- Records of my_templateset
@@ -153,7 +154,7 @@ CREATE TABLE `my_user` (
   `joindate` smallint(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`userid`),
   KEY `userid` (`userid`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=gbk;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 
 
@@ -171,7 +172,7 @@ CREATE TABLE `my_usergroup` (
   `canpublish` enum('y','n') NOT NULL DEFAULT 'n',
   `canadmin` enum('y','n') NOT NULL DEFAULT 'n',
   PRIMARY KEY (`usergroupid`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=gbk;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 #- ----------------------------
 #- Records of my_usergroup

@@ -12,6 +12,14 @@
 define('getCache',1);
 require('article_global.inc.php');
 
+if (!isset($_GET[page])){
+	$page=1;
+}else{
+$page =$_GET[page];
+}
+
+
+
 if(empty($keyword)) {
 
 	$t->preload('search');

@@ -28,29 +28,29 @@ if ($action=="del"){
 if(empty($keyword)) {
 	$jumpmenu=get_category_dropdown(0);
 	$content.='<tr bgcolor="#FFFFFF"> 
-            <td>ÇëÊäÈë¹Ø¼ü×Ö:</td>
+            <td>è¯·è¾“å…¥å…³é”®å­—:</td>
             <td> 
               <input type="text" name="keyword">
               <input type="hidden" name="action" value="result">
             </td>
           </tr>
           <tr bgcolor="#FFFFFF"> 
-            <td>ÇëÑ¡ÔñËÑË÷µÄ·¶Î§:</td>
+            <td>è¯·é€‰æ‹©æœç´¢çš„èŒƒå›´:</td>
             <td> 
-              ÔÚ<INPUT type=checkbox name=searchTitle checked> ±êÌâ
-	<INPUT type=checkbox name=searchInContent> ÎÄÕÂÄÚÈÝ  ÖÐËÑË÷ </td>
+              åœ¨<INPUT type=checkbox name=searchTitle checked> æ ‡é¢˜
+	<INPUT type=checkbox name=searchInContent> æ–‡ç« å†…å®¹  ä¸­æœç´¢ </td>
           </tr>
           <tr bgcolor="#FFFFFF"> 
-            <td>ÇëÑ¡Ôñ·ÖÀà:</font></td>
+            <td>è¯·é€‰æ‹©åˆ†ç±»:</font></td>
             <td>'.$jumpmenu.'</td>
           </tr><tr bgcolor="#FFFFFF">
-	<td>ÇëÑ¡ÔñËÑË÷½á¹ûÅÅÐò·½Ê½</td>
+	<td>è¯·é€‰æ‹©æœç´¢ç»“æžœæŽ’åºæ–¹å¼</td>
 	<TD>
           <SELECT  name=orderby>
-            <OPTION value=posttime>°´ÕÕÎÄÕÂ·¢±íÊ±¼äÅÅÐò</OPTION>
-            <OPTION value=clicktimes>°´ÕÕÎÄÕÂµã»÷ÊýÄ¿ÅÅÐò</OPTION>
-            <OPTION value=rating>°´ÕÕÎÄÕÂµÄµÃ·ÖÅÅÐò</OPTION>
-            <OPTION value=poster>°´ÕÕÖ÷Ìâ×÷ÕßÓÃ»§ÃûÅÅÐò</OPTION>
+            <OPTION value=posttime>æŒ‰ç…§æ–‡ç« å‘è¡¨æ—¶é—´æŽ’åº</OPTION>
+            <OPTION value=clicktimes>æŒ‰ç…§æ–‡ç« ç‚¹å‡»æ•°ç›®æŽ’åº</OPTION>
+            <OPTION value=rating>æŒ‰ç…§æ–‡ç« çš„å¾—åˆ†æŽ’åº</OPTION>
+            <OPTION value=poster>æŒ‰ç…§ä¸»é¢˜ä½œè€…ç”¨æˆ·åæŽ’åº</OPTION>
           </SELECT>
           </TD>
 	</tr>';

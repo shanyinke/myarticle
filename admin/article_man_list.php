@@ -12,16 +12,48 @@ if (!access("canedit")){
 	shownopermission();
 }
 init();
-if (!isset($cat_parent_id)){
-	$cat_parent_id=0;
+//if (!isset($cat_parent_id)){
+//	$cat_parent_id=0;
+//}
+ //echo $_GET["action"];
+  //echo $_POST["action"];
+  
+  
+if (!isset($_POST["action"])){
+	
+	
+	if (!isset($_GET["action"])){
+		$action="modify";
+		
+	}else{
+		$action=$_GET["action"];}
+	
+}else{
+	$action=$_POST["action"];
 }
-if (!isset($action)){
-	$action="modify";
+  
+  
+  
+if (!isset($_GET["cat_id"])){
+	
+}else{
+	$cat_id=$_GET["cat_id"];
+	
 }
 
-if(!isset($page)) {
+
+
+if(!isset($_GET["page"])) {
 	$page = 1;
+} else{
+	$page = $_GET["page"];
 }
+
+$articleId = $_POST['articleId'];
+
+
+
+//echo $action;
 if ($action=="publisharticle"){
 	setTitle('publish articles');
 	$beginrow=($page - 1)* $articleperpage;
@@ -30,7 +62,7 @@ if ($action=="publisharticle"){
 	$allarticles=$DB_site->query("SELECT * FROM $table_article WHERE cateid=$cat_id AND published!='y' limit $beginrow, $articleperpage ");
 	while ($article=$DB_site->fetch_array($allarticles)){
 		$content.= "<tr bgcolor=\"#FFFFFF\">\n";
-		$content.= "<td ><a href=../article.php?aid=$article[articleid]><b>$article[title]</b></a></td>\n<td align=\"center\"><b><input type=checkbox name=articleId[$article[articleid]] value=$article[articleid]></b></td></tr>\n";
+		$content.= "<td ><a href=../article.php?aid=$article[articleid]><b>$article[title]</b></a></td>\n<td align=\"center\"><b><input type=checkbox name=articleId[$article[articleid]] value='$article[articleid]'></b></td></tr>\n";
 
 	}
 	$matchArticles = $DB_site->query_first("select count(*) FROM $table_article WHERE cateid=$cat_id AND published!='y'");
@@ -49,7 +81,8 @@ if ($action=="publisharticle"){
 }
 
 if ($action=="dopublish"){
-	$DB_site->query(sprintf("UPDATE $table_article SET published='y 'WHERE (articleid IN ('%s'))",join("','", $articleId)));
+	
+	$DB_site->query(sprintf("UPDATE $table_article SET published='y' WHERE (articleid IN ('%s'))",join("','", $_POST[articleId])));
 	//$DB_site->query(sprintf("DELETE FROM $table_page WHERE (articleid IN ('%s'))",join("','", $articleId)));
 	showSuccess('You have published articles successfully', $thisprog);
 }
@@ -81,6 +114,7 @@ if ($action=="listarticle"){
 	
 	
 }
+//echo $action;
 if ($action=="delarticle"){
 	$DB_site->query(sprintf("DELETE FROM $table_article WHERE (articleid IN ('%s'))",join("','", $articleId)));
 	$DB_site->query(sprintf("DELETE FROM $table_page WHERE (articleid IN ('%s'))",join("','", $articleId)));

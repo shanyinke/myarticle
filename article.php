@@ -17,12 +17,16 @@
 
 require('article_global.inc.php');
 
-if (!isset($aid)){
+if (!isset($_GET[aid])){
 	showerror('error_articleid');
+}else{
+	$aid=$_GET[aid];
 }
 
-if (!isset($page)){
+if (!isset($_GET[page])){
 	$page=1;
+}else{
+$page =$_GET[page];
 }
 
 $t->preload('showarticle');

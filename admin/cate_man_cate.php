@@ -13,8 +13,27 @@ if (!access("canadmin")){
 init();
 
 
-if (!isset($action)){
+if (!isset($_POST['action'])){
+	
+	if (!isset($_GET['action'])){
+	
+	
+	
 	$action="modify";
+} else{
+	$action=$_GET['action'];
+}
+	
+	
+} else{
+	$action=$_POST['action'];
+}
+echo $action;
+
+if (!isset($_GET['cat_id'])){
+	//$action="modify";
+} else{
+	$cat_id=$_GET['cat_id'];
 }
 
 if ($action=="ordercat"){
@@ -40,7 +59,9 @@ if ($action=="removecat" && $cat_id){
 }
 if ($action=="del" && $cat_id){
 	$getcache=1;
-	$DB_site->query("DELETE FROM $table_permissions WHERE cateid='$cat_id'");
+	$sql="DELETE FROM $table_permissions WHERE cateid='$cat_id'";
+	echo $sql;
+	$DB_site->query($sql);
 	$ids=get_all_cat($cat_id);
 	$ids[]=$cat_id;
 

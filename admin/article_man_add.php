@@ -68,7 +68,7 @@ $content.='<input type="hidden" name="__data">';
 //$content.='<input type="hidden" name="page" value='.$page.'>';
 //$content.='<input type="hidden" name="articleid" value='.$articleid.'>';
 
-//include('./bar.php');
+
 $content.='<tr bgcolor="#ffffff"><td>content: </td><td> <textarea name="articleContent"></textarea>
                 <script>
                         CKEDITOR.replace( "articleContent" );

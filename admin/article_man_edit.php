@@ -11,28 +11,48 @@ include('./admin_global.inc.php');
 if (!access("canedit")){
 	shownopermission();
 }
-$content = '<HTML><head><META content="text/html; charset='.language.'" http-equiv=Content-Type><Title>Admin 	Panel Component</title><link rel=stylesheet href=cpstyle.css>
-	</head><body bgcolor=FFFFFF  text="#000000" leftmargin="10" topmargin="10" marginwidth="10" marginheight="10" link="#000000" vlink="#000000" alink="#000000" onLoad="Init()">';
 
-include('./js.php');
+if (!isset($_GET["cat_parent_id"])){
+	$cat_parent_id=0;
+}else{
+	$cat_parent_id=$_GET["cat_parent_id"];}
+
+if (!isset( $_GET["aid"])){
+	showerror();
+}else{
+	$aid=$_GET["aid"];}
+
+$content = '<HTML>
+<head>
+<META content="text/html; charset='.language.'" http-equiv=Content-Type>
+<Title>Admin 	Panel Component</title><link rel=stylesheet href=cpstyle.css>
+<script src="//cdn.ckeditor.com/4.11.3/standard/ckeditor.js">
+</script>
+</head>
+<body bgcolor=FFFFFF  text="#000000" leftmargin="10" topmargin="10" marginwidth="10" marginheight="10" link="#000000" vlink="#000000" alink="#000000" onLoad="Init()">';
+
+//include('./js.php');
 $content.= '<table width=98% cellspacing=0 cellpadding=0 border=0>
 					<tr>
 						<td><p>&nbsp;</p></td>
 					</tr>
 				</table>
-				<br><form method=post name=info onsubmit="return ProcessArticle()" enctype=multipart/form-data action=article_man_edit.php?aid='.$aid.'>';
-$content.= '<table width=90% cellpadding=0 align=center cellspacing=1><tr><td bgcolor=666666><table width=100% 	cellpadding=4 cellspacing=1><tr><td bgcolor=CCCCCC colspan=20> <font size=2><b>edit an article</b></font> 	</td></tr>';
+				<br>
+				<form method=post name=info onsubmit="return ProcessArticle()" enctype=multipart/form-data action=article_man_edit.php?aid='.$aid.'>';
+$content.= '<table width=90% cellpadding=0 align=center cellspacing=1>
+<tr>
+<td bgcolor=666666><table width=100% 	cellpadding=4 cellspacing=1><tr><td bgcolor=CCCCCC colspan=20> <font size=2><b>edit an article</b></font> 	
+</td></tr>';
 
-if (!isset($cat_parent_id)){
-	$cat_parent_id=0;
-}
-if (!isset($aid)){
-	showerror();
-}
+
+	
+
+	
+	
 if ($_POST['submit']) {
 	if ($_POST['articleTitle'] && $_POST['articleAuthor'] && $_POST['articleDescription']) {
 		
-
+echo $aid;
 		$DB_site->query("UPDATE $table_article SET cateid='".slashesencode(htmlspecialchars($_POST['cateid']))."', author='".slashesencode(trim($_POST['articleAuthor']))."', title='".slashesencode(trim($_POST['articleTitle']))."', description='".slashesencode($_POST['articleDescription'])."' WHERE articleid=$aid");
 
 		require('../include/template.inc.php');
@@ -99,11 +119,17 @@ $content.='<tr bgcolor=EEEEEE><td colspan=20><input type=submit name="submit"></
 $content.= '<form method=post name=article onsubmit="return ProcessArticle()" enctype=multipart/form-data 		action="article_add_next.php"><table width=90% cellpadding=0 align=center cellspacing=1><tr><td 			bgcolor=666666><table width=100% cellpadding=4 cellspacing=1><tr><td bgcolor=CCCCCC colspan=20> <font 		size=2><b>add a new page</b></font> </td></tr>';
 
 $content.='<tr bgcolor="#ffffff"><td>subtitle: </td><td><input type=text name=articleSubtitle></td></tr>';
-$content.='<INPUT type=hidden name=articleContent>';
+$content.='<tr bgcolor="#ffffff"><td>content: </td><td> <textarea name="articleContent"></textarea>
+                <script>
+                        CKEDITOR.replace( "articleContent" );
+                </script></td></tr>';
+//$content.='<INPUT type=hidden name=articleContent>';
 $content.='<input type="hidden" name="__data">';
 $content.='<input type="hidden" name="page" value='.++$toltalpage.'>';
 $content.='<input type="hidden" name="articleid" value='.$aid.'>';
 
-include('./bar.php');
+//include('./bar.php');
+
+
 print $content.'<tr bgcolor=EEEEEE><td colspan=20><input type=submit name="submit">&nbsp;&nbsp;<INPUT 			accessKey=r type=reset value=reset name="reset"> <INPUT accessKey=n type=submit value=nextpage 				name="nextpage"></td></tr></table></table><br><br></Form></Body></Html>';
 ?>

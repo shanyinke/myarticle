@@ -6,7 +6,7 @@ if (!access("canadmin")){
 	shownopermission();
 }
 init();
-setTitle('mass del topic');
+setTitle('mass move topic');
 $articleperpage=$articlesPP;
 
 
@@ -24,29 +24,29 @@ $jumpmenu=get_category_dropdown(0);
 if(empty($keyword)) {
 	
 	$content.='<tr bgcolor="#FFFFFF"> 
-            <td>ÇëÊäÈë¹Ø¼ü×Ö:</td>
+            <td>è¯·è¾“å…¥å…³é”®å­—:</td>
             <td> 
               <input type="text" name="keyword">
               <input type="hidden" name="action" value="result">
             </td>
           </tr>
           <tr bgcolor="#FFFFFF"> 
-            <td>ÇëÑ¡ÔñËÑË÷µÄ·¶Î§:</td>
+            <td>è¯·é€‰æ‹©æœç´¢çš„èŒƒå›´:</td>
             <td> 
-              ÔÚ<INPUT type=checkbox name=searchTitle checked> ±êÌâ
-	<INPUT type=checkbox name=searchInContent> ÎÄÕÂÄÚÈİ  ÖĞËÑË÷ </td>
+              åœ¨<INPUT type=checkbox name=searchTitle checked> æ ‡é¢˜
+	<INPUT type=checkbox name=searchInContent> æ–‡ç« å†…å®¹  ä¸­æœç´¢ </td>
           </tr>
           <tr bgcolor="#FFFFFF"> 
-            <td>ÇëÑ¡Ôñ·ÖÀà:</font></td>
+            <td>è¯·é€‰æ‹©åˆ†ç±»:</font></td>
             <td>'.$jumpmenu.'</td>
           </tr><tr bgcolor="#FFFFFF">
-	<td>ÇëÑ¡ÔñËÑË÷½á¹ûÅÅĞò·½Ê½</td>
+	<td>è¯·é€‰æ‹©æœç´¢ç»“æœæ’åºæ–¹å¼</td>
 	<TD>
           <SELECT  name=orderby>
-            <OPTION value=posttime>°´ÕÕÎÄÕÂ·¢±íÊ±¼äÅÅĞò</OPTION>
-            <OPTION value=clicktimes>°´ÕÕÎÄÕÂµã»÷ÊıÄ¿ÅÅĞò</OPTION>
-            <OPTION value=rating>°´ÕÕÎÄÕÂµÄµÃ·ÖÅÅĞò</OPTION>
-            <OPTION value=poster>°´ÕÕÖ÷Ìâ×÷ÕßÓÃ»§ÃûÅÅĞò</OPTION>
+            <OPTION value=posttime>æŒ‰ç…§æ–‡ç« å‘è¡¨æ—¶é—´æ’åº</OPTION>
+            <OPTION value=clicktimes>æŒ‰ç…§æ–‡ç« ç‚¹å‡»æ•°ç›®æ’åº</OPTION>
+            <OPTION value=rating>æŒ‰ç…§æ–‡ç« çš„å¾—åˆ†æ’åº</OPTION>
+            <OPTION value=poster>æŒ‰ç…§ä¸»é¢˜ä½œè€…ç”¨æˆ·åæ’åº</OPTION>
           </SELECT>
           </TD>
 	</tr>';
@@ -131,7 +131,7 @@ if($articleCount > $articleperpage) {
 
 $content .= '</td></tr><input type=hidden name=action value=move>';
 $content .=' <tr bgcolor="#FFFFFF"> 
-            <td>ÇëÑ¡ÔñÄ¿µÄ·ÖÀà:</font></td>
+            <td>è¯·é€‰æ‹©ç›®çš„åˆ†ç±»:</font></td>
             <td colspan=2>'.$jumpmenu.'</td>
           </tr>';
 

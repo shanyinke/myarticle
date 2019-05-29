@@ -60,7 +60,10 @@ function get_row_bg() {
 }
 function show_admin_header() {
 	global $content;
-	$content = '<HTML><head><META content="text/html; charset=gb2123" http-equiv=Content-Type><Title>Myarticle Admin Control Panel</title>
+	$content = '<HTML>
+	<head>
+	<META content="text/html; charset='.language.'" http-equiv=Content-Type>
+	<Title>Myarticle Admin Control Panel</title>
 	<link rel=stylesheet href=cpstyle.css>
 </head><body bgcolor=FFFFFF  text="#000000" leftmargin="10" topmargin="10" marginwidth="10" marginheight="10" link="#000000" vlink="#000000" alink="#000000">';
 }

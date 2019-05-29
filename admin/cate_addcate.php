@@ -13,9 +13,17 @@ if (!access("canadmin")){
 }
 init();
 setTitle('Add a new cate');
-if (!isset($cat_parent_id)){
+//if (!isset($cat_parent_id)){
+//	$cat_parent_id=0;
+//}
+
+
+if (!isset($_GET["cat_parent_id"])){
 	$cat_parent_id=0;
+}else{
+    $cat_parent_id=$_GET["cat_parent_id"];
 }
+//echo $cat_parent_id;
 if ($_POST['submit']) {
 	if ($_POST['cateTitle']) {
 		$DB_site->query("INSERT INTO $table_cate

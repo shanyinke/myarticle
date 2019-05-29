@@ -12,18 +12,29 @@ if (!access("canadmin")){
 }
 init();
 setTitle('Edit a cat');
-if (!isset($cat_parent_id)){
+if (!isset($_GET["cat_parent_id"])){
 	$cat_parent_id=0;
+}else{
+    $cat_parent_id=$_GET["cat_parent_id"];
 }
+
+
+if (!isset($_GET["cat_id"])){
+    $cat_id=0;
+}else{
+    $cat_id=$_GET["cat_id"];
+}
+//echo $cat_id;
 
 if ($_POST['submit']) {
 	if ($_POST['cateTitle']) {
-		$DB_site->query("UPDATE  $table_cate
+		$sql="UPDATE  $table_cate
 		SET
 		title  ='".slashesencode($_POST['cateTitle'])."',
 		description = '".slashesencode($_POST['description'])."',
-		parentid = '$_POST[cateid]' WHERE cateid ='$cat_id' ");
-		
+		parentid = '".$_POST['cateid']."' WHERE cateid = '".$cat_id."' ";
+		$DB_site->query($sql);
+		//echo $sql;
 		$DB_site->query("DELETE FROM $table_permissions WHERE cateid='$cat_id'");
 
 		$addpermission     =$_POST['addpermission'];
@@ -54,6 +65,7 @@ if ($_POST['submit']) {
 		$content.='<tr bgcolor=FFFFFF><td colspan=2><font color=red>Please fill up the Title</font></td></tr>';
 	}
 }
+
 
 	
 $rs=$DB_site->query_first("SELECT * FROM $table_cate WHERE cateid='$cat_id'");

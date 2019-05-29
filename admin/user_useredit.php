@@ -4,7 +4,7 @@
  * user -> edit user
  */
 
-$thisprog='user_editgroup.php';
+$thisprog='user_useredit.php';
 //define('getCache',1);
 include('./admin_global.inc.php');
 
@@ -15,11 +15,17 @@ if (!access("canadmin")){
 init();
 setTitle('Edit a user');
 
-/*
-if (!isset($usergoupid)){
-	showerror();
+if(!isset($_Get['action'])){
+
+}else{
+    $action=$_GET['action'];
 }
-*/
+if(!isset($_GET['userid'])){
+
+}else{
+    $userid=$_GET['userid'];
+}
+//echo $userid;
 if ($action=="delete"){
 	$content.='<tr bgcolor="#ffffff"><td>Do you want to delete this user  </td></tr>';
 	$content.='<input type=hidden name=action value=dodel>';

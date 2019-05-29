@@ -13,11 +13,21 @@ if (!access("canadmin")){
 init();
 setTitle('set the permission of a usergroup');
 
-/*
-if (!isset($usergoupid)){
-	showerror();
+if(!isset($_POST['action'])){
+    if(!isset($_GET['action'])){
+       // $action="modify";
+    }else{
+        $action=$_GET['action'];
+    }
+}else{
+    $action=$_POST['action'];
 }
-*/
+if(!isset($_GET['usergroupid'])){
+
+}else{
+    $usergroupid=$_GET['usergroupid'];
+}
+
 
 
 if ($_POST['submit']) {

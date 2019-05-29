@@ -10,6 +10,7 @@ if (access("canadmin")){
 
 	show_nav_header('global Settings');
 	show_nav_option('option settings', 'option.php');
+	show_nav_option('phpinfo', 'phpinfo.php');
 
 	show_nav_header('Category Settings');
 	show_nav_option('Add a Category', 'cate_addcate.php');
@@ -21,6 +22,7 @@ if (access("canadd") || access("canpublish")){
 	show_nav_header('Article Management Settings');
 	show_nav_option('Add An article', 'article_man_add.php');
 	show_nav_option('Manage An article', 'article_man_list.php');
+	
 }
 if (access("canadmin")){
 	show_nav_option('Mass delete articles', 'article_mass_del.php');
@@ -32,12 +34,22 @@ if (access("canadmin")){
 	show_nav_option('Edit A user', 'user_userlist.php');
 	show_nav_option('Add a usergroup', 'user_addgroup.php');
 	show_nav_option('Edit a usergroup', 'user_mangroup.php');
+	
+	show_nav_header('Wechat menu Settings');
+	show_nav_option('Add A menu', 'menu_create.php');
+	show_nav_option('query A menu', 'menu_query.php');
+	show_nav_option('delte menu', 'menu_delete.php');
+
 
 }
 
 if (access("canadd") || access("canpublish")){
 	show_nav_header('File Management Settings');
 	show_nav_option('File Manage', 'file_upload.php');
+	
+	show_nav_header('Manage joke');
+	show_nav_option('Joke List', 'joke_jokelist.php');
+	
 }
 
 if (access("canadmin")){
