@@ -1,4 +1,4 @@
 /uedit
 /bak
 /upload/*.*
-config.inc.php
+include/config.inc.php
