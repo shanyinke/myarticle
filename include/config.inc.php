@@ -1,7 +1,7 @@
 <?php
 define('db_type','mysql');
-define('db_user','root');
-define('db_pass','admin@6');
+define('db_user','myarticle');
+define('db_pass','');
 define('db_host','localhost');
 define('db_name','myarticle');
 define('tablepre','my_');
